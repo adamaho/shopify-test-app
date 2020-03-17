@@ -9,11 +9,8 @@ import next from 'next'
 const port = parseInt(process.env.PORT || '3000', 10)
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
-const handle = app.getRequestHandler()
 
 const {SHOPIFY_API_KEY, SHOPIFY_SECRET} = process.env;
-
-
 
 app.prepare().then(() => {
   const server = new Koa();
@@ -21,13 +18,8 @@ app.prepare().then(() => {
   const privateRouter = new Router();
 
   clientRouter.get('/auction', async (ctx: any) => {
-    // ctx.set('Content-Type', 'application/liquid');
+    ctx.set('Content-Type', 'application/liquid');
     await app.render(ctx.req, ctx.res, '/auction', ctx.query)
-    ctx.respond = false
-  })
-
-  clientRouter.all('*', async (ctx: any) => {
-    await handle(ctx.req, ctx.res)
     ctx.respond = false
   })
 
