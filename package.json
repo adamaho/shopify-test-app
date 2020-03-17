@@ -7,15 +7,25 @@
     "start": "cross-env NODE_ENV=production node dist/index.js"
   },
   "dependencies": {
+    "@rtkwlf/ui": "0.0.31",
+    "@shopify/koa-shopify-auth": "3.1.57",
     "cross-env": "^5.2.0",
+    "es6-promise": "4.2.8",
+    "isomorphic-fetch": "2.2.1",
+    "koa": "2.11.0",
+    "koa-session": "5.13.1",
     "next": "latest",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
   },
   "devDependencies": {
+    "@types/koa": "2.11.2",
+    "@types/koa-router": "7.4.0",
+    "@types/koa-session": "5.10.2",
     "@types/node": "^12.0.12",
     "@types/react": "^16.8.17",
     "@types/react-dom": "16.8.4",
+    "koa-router": "8.0.8",
     "nodemon": "^1.19.0",
     "ts-node": "^8.1.0",
     "typescript": "^3.4.5"
